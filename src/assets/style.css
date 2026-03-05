@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* =======================*/
+/*    style acceuil      */
+
+
+.subtitle {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+/* CARTES */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Couleurs du haut des cartes */
+.orange .icon {
+    color: orange;
+}
+
+.purple .icon {
+    color: purple;
+}
+
+.blue .icon {
+    color: #2b4db3;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* BOUTON */
+.btn-start {
+    display: inline-block;
+    padding: 18px 60px;
+    background: #ff4b5c;
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-start:hover {
+    background: #ff1e3c;
+    transform: scale(1.05);
+}
+
+image {
+    border-radius: 50%;
+
+}
+
+/*===============================*/
+/*        style formulaire      */
+
+.navbar {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #f0f0f0;
+    color: #667eea;
+}
+
+.nav-links a.active {
+    background: #667eea;
+    color: white;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+/* Titre principal (EXACTEMENT comme dans l'image) */
+.titre-principal {
+    text-align: center;
+    color: skyblue;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Wrapper du formulaire */
+.formulaire-wrapper {
+    background: rgb(122, 104, 104);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Groupes de champs (style EXACT de l'image) */
+.groupe-champ {
+    margin-bottom: 25px;
+}
+
+.groupe-champ label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.groupe-champ label strong {
+    font-weight: 600;
+}
+
+/* Texte "Confirm Password" dans le champ Password (comme dans l'image) */
+.confirm-text {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-style: normal;
+}
+
+.groupe-champ input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f8f9fa;
+}
+
+.groupe-champ input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.groupe-champ input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+}
+
+/* Groupe de boutons (contenant les 3 boutons) */
+.groupe-boutons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+/* Style commun des boutons */
+.btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 120px;
+    letter-spacing: 0.5px;
+}
+
+/* Bouton Retour (AJOUTÉ) */
+.btn-retour {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-retour:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Bouton Enregistrer (celui de l'image) */
+.btn-enregistrer {
+    background: #667eea;
+    color: white;
+}
+
+.btn-enregistrer:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Bouton Annuler (AJOUTÉ) */
+.btn-annuler {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-annuler:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Effet au clic */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formulaire-wrapper {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .titre-principal {
+        font-size: 1.5rem;
+    }
+
+    .formulaire-wrapper {
+        padding: 25px;
+    }
+
+    .groupe-boutons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/*================================*/
+/*    style inscription salle    */
