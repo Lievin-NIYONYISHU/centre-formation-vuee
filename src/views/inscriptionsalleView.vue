@@ -5,7 +5,7 @@
         <div class="container">
             <!-- Lien de retour -->
             <div class="retour-lien">
-                <a href="#" class="retour-link">← Retour à la liste</a>
+                <a href="" class="retour-link">← Retour à la liste</a>
             </div>
 
             <!-- Formulaire -->

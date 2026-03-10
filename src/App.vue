@@ -1,7 +1,7 @@
 
 
 <template>
-<h1> Bienvenue sur mom site </h1>
+<!-- <h1> Bienvenue sur mom site </h1> -->
 <!-- Barre de navigation -->
 <nav class="navbar">
         <div class="nav-container">
@@ -18,8 +18,8 @@
         top: 65px;">
     </div>
             <ul class="nav-links">
-                <li><router-link to="/">Accueil</router-link></li>
-                <li><router-link to="/formulaire" class="active">formulaire</router-link ></li>
+                <li><router-link to="/">salle</router-link></li>
+                <li><router-link to="/Formateurs" class="active">Formateurs</router-link ></li>
                 <li><router-link to="/inscriptionsalle" class="active">inscriptionsalle</router-link ></li>
             </ul>
         </div>

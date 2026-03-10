@@ -109,7 +109,7 @@ image {
 .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #667eea;
+    color:blue;
     text-decoration: none;
 }
 
@@ -130,12 +130,12 @@ image {
 
 .nav-links a:hover {
     background: #f0f0f0;
-    color: #667eea;
+    color: blue;
 }
 
 .nav-links a.active {
-    background: #667eea;
-    color: white;
+    background:white;
+    color: black;
 }
 
 /* Container */

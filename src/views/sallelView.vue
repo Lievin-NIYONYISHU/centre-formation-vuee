@@ -68,7 +68,7 @@ body {
 
 h1 {
     font-size: 38px;
-    color: blue;
+    color: blueviolet;
     margin-bottom: 15px;
 }
 

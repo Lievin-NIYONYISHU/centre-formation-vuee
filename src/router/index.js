@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import acceuilView from '../views/acceuilView.vue'
+import acceuilView from '../views/sallelView.vue'
 // Importez la page 2
-import formulaireView from '../views/formulaireView.vue'
+import FormateursView from '../views/formateursView.vue'
 import inscriptionsalleView from '../views/inscriptionsalleView.vue'
 import formulaire1View from '../views/formulaire1View.vue'
+//import FormateursView from '@/views/FormateursView.vue'
 
 
 const routes = [
@@ -14,9 +15,9 @@ const routes = [
   },
 
   {
-    path: '/formulaire',  // Nouvelle route pour page2
-    name: 'formulaire',
-    component: formulaireView
+    path: '/formateurs',  // Nouvelle route pour page2
+    name: 'formateurs',
+    component: FormateursView
   },
    {
     path: '/formulaire1',  // Nouvelle route pour page2
