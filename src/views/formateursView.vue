@@ -1,33 +1,32 @@
 <script setup>
 import axios from 'axios';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';  // ← ajouter onMounted
 
-const formateurs = ref([])
+const formateurs = ref([])  // minuscule
 
-// Récupération des formateurs (vérifiez l'URL de votre API)
-  axios.get("http://127.0.0.1:8000/gestion_etudiant/creneaux/").then(resp => {
-  // .results si vous utilisez la pagination DRF, sinon resp.data
-  formateurs.value = resp.data.results ; 
+onMounted(() => {  // ← entourer l'appel axios
+  axios.get("http://127.0.0.1:8000/gestion_etudiant/formateurs/")
+    .then(resp => {
+      // Fonctionne avec et sans pagination DRF
+      formateurs.value = resp.data.results ?? resp.data
+    })
+    .catch(err => {
+      console.error("Erreur de chargement :", err)
+    })
 })
 </script>
 
 <template>
   <h1>Formateurs disponibles</h1>
-  
+
   <ol type="1">
-    <li class="formateur" v-for="f in Formateurs" :key="f.matricule">
+    <!-- ← formateurs avec f minuscule -->
+    <li class="formateur" v-for="f in formateurs" :key="f.matricule">
       {{ f.nom }} {{ f.prenom }} - Ref: {{ f.matricule }}
     </li>
   </ol>
 </template>
 
 <style scoped>
-/* Style identique à celui de "salle" */
-.formateur {
-  background: #f1f1f1;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
+/* vos styles ici */
 </style>
