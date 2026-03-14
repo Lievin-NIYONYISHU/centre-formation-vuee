@@ -268,11 +268,10 @@ export default {
           "http://localhost:8000/api/token/",
           {
             username: this.form.username,
-            password: this.form.code,   // le "code" est le mot de passe Django
+            password: this.form.code,
           }
         );
         if (res.status === 200) {
-          // Sauvegarde des tokens
           localStorage.setItem('access_token', res.data.access);
           if (res.data.refresh) {
             localStorage.setItem('refresh_token', res.data.refresh);
@@ -283,13 +282,26 @@ export default {
           setTimeout(() => this.$router.push("/formateurs"), 1500);
         }
       } catch (e) {
-        const d = e.response?.data;
-        if (d?.detail) {
-          this.errorMsg = d.detail; // "No active account found with the given credentials"
+        // Si l'API échoue, on vérifie les comptes créés localement
+        const users = JSON.parse(localStorage.getItem('registered_users') || '[]');
+        const found = users.find(
+          u => u.username === this.form.username && u.code === this.form.code
+        );
+        if (found) {
+          localStorage.setItem('access_token', 'local_user_' + found.username);
+          this.successMsg = "Connexion réussie ! Redirection en cours...";
+          this.form = { username: "", code: "" };
+          this.errors = {};
+          setTimeout(() => this.$router.push("/formateurs"), 1500);
         } else {
-          this.errorMsg = "Vérifiez vos identifiants et réessayez.";
+          const d = e.response?.data;
+          if (d?.detail) {
+            this.errorMsg = d.detail;
+          } else {
+            this.errorMsg = "Identifiants incorrects. Vérifiez votre nom et votre code.";
+          }
+          this.errors = { ...this.errors };
         }
-        this.errors = { ...this.errors };
       } finally {
         this.loading = false;
       }
@@ -298,6 +310,11 @@ export default {
   mounted() {
     this.updateTime();
     this._timer = setInterval(this.updateTime, 1000);
+    // Pré-remplir le nom si on vient de s'inscrire
+    if (this.$route.query.registered === '1' && this.$route.query.username) {
+      this.form.username = this.$route.query.username;
+      this.successMsg = `Compte créé avec succès ! Entrez maintenant votre code pour vous connecter.`;
+    }
   },
   beforeUnmount() {
     clearInterval(this._timer);
